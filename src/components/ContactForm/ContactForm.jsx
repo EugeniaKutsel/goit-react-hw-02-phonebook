@@ -1,5 +1,6 @@
 import React from "react";
 import { nanoid } from 'nanoid';
+import css from "../ContactForm/ContactForm.module.css";
 
 class ContactForm extends React.Component {
   state = {
@@ -30,8 +31,8 @@ class ContactForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor={this.nameInputId}>Name
+      <form onSubmit={this.handleSubmit} className={css.form}>
+        <label htmlFor={this.nameInputId} className={css.formName}>Name</label>
           <input
             id={this.nameInputId}
             type="text"
@@ -40,10 +41,10 @@ class ContactForm extends React.Component {
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             value={this.state.name}
             onChange={this.handleChange}
+            className={css.formInput}
             required
           />
-        </label>
-        <label htmlFor={this.numberInputId}>Number
+        <label htmlFor={this.numberInputId} className={css.formName}>Number </label>
           <input
             id={this.numberInputId}
             type="tel"
@@ -52,10 +53,10 @@ class ContactForm extends React.Component {
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             value={this.state.number}
             onChange={this.handleChange}
+            className={css.formInput}
             required
           />
-        </label>
-        <button type="submit">Add contact</button>
+        <button type="submit" className={css.formButton}>Add contact</button>
       </form>
     );
   }
