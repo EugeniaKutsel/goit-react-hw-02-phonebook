@@ -33,6 +33,7 @@
   border: 1px solid transparent;
   width: 210px;
   margin-top: 20px;
+  cursor: pointer;
 }
 
 .formButton:hover {
